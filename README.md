@@ -1,80 +1,75 @@
 # ReadmeCraft
 
-Generate your GitHub profile README with just your username.
+Generate a GitHub profile README with an SVG banner, contribution chart, and featured projects — via web app or CLI.
 
-## Features
+<div align="center">
+  <img src="public/home.png" width="49%"/>
+  <img src="public/editor.png" width="49%"/>
+</div>
 
-- **3 Templates** (Minimal, Standard, Detailed)
-- **Customizable Sections** (About, Stats, Skills, Projects)
-- **Featured Projects Selection** with pagination
-- **Smart Auto-selection** in detailed templates
-- **Real-time Markdown Preview**
-- **Copy to Clipboard** in one click
 
-## Tech Stack
+**Deploy to Vercel**
 
-- **React 18** + TypeScript
-- **Vite** for fast builds
-- **Tailwind CSS** for styling
-- **GitHub API** (no authentication required)
-- **FontAwesome** for icons
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/cristianrubioa/readme-craft)
 
-## Installation
-
+Or manually:
 ```bash
-# Clone repository
-git clone https://github.com/cristianrubioa/readme-craft.git
-cd readme-craft
-
-# Install dependencies
 npm install
+npm run build   # outputs to dist/
+```
+Point Vercel to the `dist/` directory with framework preset **Vite**.
 
-# Development
-npm run dev
+## Web app
 
-# Production build
-npm run build
+Open the app, enter your GitHub username, pick a template and sections, download `banner.svg`, copy the markdown snippet, and commit both to your `{username}/{username}` profile repo.
 
-# Linting
-npm run lint
-
-# Type checking
-npx tsc --noEmit
+**Run locally**
+```bash
+npm install
+npm run dev     # http://localhost:5173
 ```
 
-## Usage
+## CLI
 
-1. Open the application
-2. Enter your GitHub username
-3. Select a template (Minimal, Standard, or Detailed)
-4. Customize sections as needed
-5. Choose featured projects
-6. Copy the generated markdown
+Generate `output/banner.svg` and `output/README.md` locally without opening the browser.
 
-## Templates
-
-- **Minimal**: About + Skills + Projects (no stats)
-- **Standard**: About + Stats + Skills (no projects)
-- **Detailed**: All (About + Stats + Skills + Projects with auto-selection of top 5)
-
-## Project Structure
-
-```
-src/
-├── components/       # Reusable React components
-├── hooks/           # Custom hooks for GitHub API
-├── templates/       # Template configurations
-├── types/           # TypeScript types
-├── utils/           # Helper functions
-└── App.tsx          # Main component
+**Setup**
+```bash
+make setup      # creates .env from .env.example
+                # edit .env → set GITHUB_USERNAME and PROFILE_REPO_TOKEN
 ```
 
-## Contributing
+**Configure** — edit `readmecraft.yml`:
+```yaml
+template: standard   # minimal | standard | detailed
+theme: dark          # dark | light
+projects:            # leave empty for no featured projects
+  - my-repo
+  - another-repo
+```
 
-Contributions are welcome. For significant changes, please open an issue first.
+**Run**
+```bash
+make build           # generates output/banner.svg + output/README.md
+make generate        # build + push to your profile repo
+make help            # list all targets
+```
 
-## Credits
+Override config at runtime without editing the file:
+```bash
+make build theme=light projects="repo1,repo2"
+```
 
-Created by [@cristianrubioa](https://github.com/cristianrubioa) for developers.
+## GitHub Actions
 
+Keeps your profile README up to date automatically — runs on the 1st and 15th of every month.
 
+**Setup**
+
+1. Fork this repo
+2. Go to **Settings → Secrets and variables → Actions** and add:
+   - `PROFILE_REPO_TOKEN` — Personal Access Token with `public_repo` scope ([create one](https://github.com/settings/tokens))
+3. Enable Actions in your fork
+4. Trigger manually from **Actions → Update GitHub Profile README → Run workflow** to test
+
+Your GitHub username is read automatically from the repo owner — no extra secret needed.
