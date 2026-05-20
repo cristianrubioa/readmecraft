@@ -1,0 +1,56 @@
+# Automatically keeps your GitHub profile README up to date.
+#
+# Runs on the 1st of every month and can also be triggered manually
+# from the Actions tab → "Update GitHub Profile README" → "Run workflow".
+#
+# Required repository secret (Settings → Secrets and variables → Actions):
+#   PROFILE_REPO_TOKEN  Personal access token with `public_repo` scope
+#                       Create at: GitHub → Settings → Developer Settings → Personal access tokens
+
+name: Update GitHub Profile README
+
+on:
+  schedule:
+    - cron: '0 0 1,15 * *'
+  workflow_dispatch:
+
+jobs:
+  update-profile:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout readme-craft
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate banner and README
+        env:
+          GITHUB_USERNAME: ${{ github.repository_owner }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx tsx cli/index.ts --local
+
+      - name: Push to profile repo
+        env:
+          PROFILE_REPO_TOKEN: ${{ secrets.PROFILE_REPO_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
+        run: |
+          git clone "https://x-access-token:${PROFILE_REPO_TOKEN}@github.com/${USERNAME}/${USERNAME}.git" profile-repo
+          cp output/README.md output/banner.svg profile-repo/
+          cd profile-repo
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md banner.svg
+          if git diff --cached --quiet; then
+            echo "Profile README is already up to date — skipping commit."
+          else
+            git commit -m ":memo: [doc] Update profile README"
+            git push
+          fi
