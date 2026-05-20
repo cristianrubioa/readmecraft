@@ -1,0 +1,6 @@
+# ReadmeCraft CLI defaults
+# Override any value at runtime: make build theme=light projects="repo1,repo2"
+
+template: standard   # minimal | standard | detailed
+theme: light         # dark | light
+# projects: []       # repo names to feature;
