@@ -42,3 +42,8 @@ export interface Template {
   description: string
   sections: SectionState
 }
+
+export interface ContribData {
+  total: number
+  daily: { date: string; count: number }[]
+}
