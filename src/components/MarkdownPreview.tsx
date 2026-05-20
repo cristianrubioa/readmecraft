@@ -1,5 +1,6 @@
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import rehypeRaw from 'rehype-raw'
 
 interface MarkdownPreviewProps {
   content: string
@@ -10,6 +11,7 @@ export function MarkdownPreview({ content }: MarkdownPreviewProps) {
     <div className="p-8 text-sm leading-relaxed text-slate-900 dark:text-slate-100">
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
+        rehypePlugins={[rehypeRaw]}
         components={{
           h1: ({ ...props }) => (
             <h1 className="text-3xl font-light mb-6 mt-8 text-slate-900 dark:text-slate-100 tracking-tight" {...props} />

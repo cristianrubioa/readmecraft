@@ -13,4 +13,5 @@ export const styles = {
 
 export const TEMPLATES_ORDER = ['minimal', 'standard', 'detailed'] as const
 export const PROJECTS_PER_PAGE = 7
+export const MAX_SELECTED_REPOS = 15
 export const CLIPBOARD_TIMEOUT = 2000

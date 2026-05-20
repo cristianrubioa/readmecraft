@@ -8,6 +8,8 @@ export function useGithubUser(username: string | null) {
 
   useEffect(() => {
     if (!username) {
+      setUser(null)
+      setError(null)
       return
     }
 

@@ -17,7 +17,7 @@ export function SectionEditor({
   onSectionChange,
 }: SectionEditorProps) {
   return (
-    <div className="space-y-2">
+    <div className="grid grid-cols-2 gap-2">
       {(Object.keys(sections) as Array<keyof SectionState>).map((section) => (
         <label
           key={section}
@@ -27,7 +27,7 @@ export function SectionEditor({
             type="checkbox"
             checked={sections[section]}
             onChange={(e) => onSectionChange(section, e.target.checked)}
-            className="w-5 h-5 rounded-md"
+            className="w-5 h-5 rounded-md accent-slate-500"
           />
           <span className="text-sm font-light text-slate-700 dark:text-slate-300">
             {sectionLabels[section]}
