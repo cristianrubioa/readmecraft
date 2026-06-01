@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-const KEY = 'readme-craft-theme'
+const KEY = 'readmecraft-theme'
 
 export function useDarkMode(): [boolean, (v: boolean | ((prev: boolean) => boolean)) => void] {
   const [isDark, setIsDark] = useState<boolean>(() => {

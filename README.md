@@ -1,4 +1,4 @@
-# ReadmeCraft
+# readmecraft
 
 Generate a GitHub profile README with an SVG banner, contribution chart, and featured projects — via web app or CLI.
 
@@ -10,7 +10,7 @@ Generate a GitHub profile README with an SVG banner, contribution chart, and fea
 
 **Deploy to Vercel**
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/cristianrubioa/readme-craft)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/cristianrubioa/readmecraft)
 
 Or manually:
 ```bash
