@@ -1,5 +1,12 @@
 # readmecraft
 
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-6-3178C6?logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38BDF8?logo=tailwindcss&logoColor=white)
+![Vercel](https://img.shields.io/badge/deployed_on-Vercel-black?logo=vercel&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-green)
+
 Generate a GitHub profile README with an SVG banner, contribution chart, and featured projects — via web app or CLI.
 
 <div align="center">
