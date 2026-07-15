@@ -1,7 +1,11 @@
-.PHONY: build generate setup help
+.PHONY: run build generate setup help
 
 -include .env
 export
+
+## run: Start the web app dev server (http://localhost:5173)
+run:
+	npm run dev
 
 ## build: Generate banner.svg + README.md locally (no push). Override: make build theme=light projects="repo1,repo2"
 build:
