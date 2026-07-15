@@ -1,8 +1,11 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 const KEY = 'readmecraft-theme'
 
-export function useDarkMode(): [boolean, (v: boolean | ((prev: boolean) => boolean)) => void] {
+export function useDarkMode(): [
+  boolean,
+  (v: boolean | ((prev: boolean) => boolean)) => void,
+] {
   const [isDark, setIsDark] = useState<boolean>(() => {
     try {
       const stored = localStorage.getItem(KEY)

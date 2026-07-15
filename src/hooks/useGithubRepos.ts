@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import type { GithubRepo } from '../types/github'
 
 export function useGithubRepos(username: string | null) {
@@ -16,7 +16,7 @@ export function useGithubRepos(username: string | null) {
     setError(null)
 
     fetch(
-      `https://api.github.com/users/${username}/repos?sort=stars&per_page=100`
+      `https://api.github.com/users/${username}/repos?sort=stars&per_page=100`,
     )
       .then((res) => {
         if (!res.ok) {

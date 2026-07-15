@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import type { ContribData } from '../types/github'
 
 export function useGithubContributions(username: string | null) {
@@ -10,13 +10,18 @@ export function useGithubContributions(username: string | null) {
     fetch(`https://github-contributions-api.jogruber.de/v4/${username}?y=last`)
       .then((res) => (res.ok ? res.json() : null))
       .then((data) => {
-        if (data?.total?.lastYear != null && Array.isArray(data.contributions)) {
+        if (
+          data?.total?.lastYear != null &&
+          Array.isArray(data.contributions)
+        ) {
           setContribData({
             total: data.total.lastYear,
-            daily: data.contributions.map((c: { date: string; count: number }) => ({
-              date: c.date,
-              count: c.count,
-            })),
+            daily: data.contributions.map(
+              (c: { date: string; count: number }) => ({
+                date: c.date,
+                count: c.count,
+              }),
+            ),
           })
         }
       })

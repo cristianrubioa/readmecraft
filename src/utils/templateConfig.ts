@@ -1,4 +1,4 @@
-import type { TemplateName, SectionState } from '../types/github'
+import type { SectionState, TemplateName } from '../types/github'
 
 export const TEMPLATE_CONFIGS: Record<TemplateName, SectionState> = {
   standard: {

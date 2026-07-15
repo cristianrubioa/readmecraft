@@ -1,16 +1,18 @@
-import type { GithubUser, GithubRepo, SectionState } from '../types/github'
+import type { GithubRepo, GithubUser, SectionState } from '../types/github'
 
 export function generateMarkdown(
   _user: GithubUser,
   _repos: GithubRepo[],
   _sections: SectionState,
   _selectedRepos: number[],
-  bannerSrc: string | null = './banner.svg'
+  bannerSrc: string | null = './banner.svg',
 ): string {
   const lines: string[] = []
 
   if (bannerSrc) {
-    lines.push(`<div align="center"><img src="${bannerSrc}" width="100%"/></div>`)
+    lines.push(
+      `<div align="center"><img src="${bannerSrc}" width="100%"/></div>`,
+    )
     lines.push('')
   }
 

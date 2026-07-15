@@ -21,6 +21,7 @@ export function CopyButton({ text, label = 'Copy' }: CopyButtonProps) {
 
   return (
     <button
+      type="button"
       onClick={handleCopy}
       disabled={!text}
       className={`px-5 py-2.5 rounded-2xl text-sm font-light transition-all backdrop-blur-lg ${
