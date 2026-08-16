@@ -28,6 +28,7 @@ export function GithubForm({ onSubmit, loading = false }: GithubFormProps) {
       <button
         type="submit"
         disabled={loading}
+        aria-label="Generate README"
         className="px-10 py-5 backdrop-blur-lg bg-transparent hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-900 dark:text-slate-100 font-light rounded-2xl border border-slate-300 dark:border-slate-600 disabled:opacity-60 disabled:cursor-not-allowed transition-all"
       >
         {loading ? '...' : <i className="fas fa-arrow-right text-xl"></i>}
