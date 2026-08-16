@@ -133,10 +133,13 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-950 dark:to-slate-900 text-slate-900 dark:text-slate-100 transition-colors flex flex-col">
       {/* Header */}
-      <header className="backdrop-blur-lg bg-slate-50/80 dark:bg-slate-900/80 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <h1 className="text-4xl font-light tracking-tight">readmecraft</h1>
+      <header
+        className="backdrop-blur-lg bg-slate-50/80 dark:bg-slate-900/80 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50"
+        style={{ height: 'var(--header-h, 4rem)' }}
+      >
+        <div className="max-w-6xl mx-auto px-6 h-full">
+          <div className="flex items-center justify-between h-full">
+            <h1 className="text-2xl font-light tracking-tight">readmecraft</h1>
             <div className="flex items-center gap-2">
               <button
                 type="button"
@@ -544,7 +547,7 @@ function App() {
       <footer className="backdrop-blur-lg bg-slate-50/80 dark:bg-slate-900/80 border-t border-slate-200 dark:border-slate-800">
         <div className="max-w-6xl mx-auto px-6 py-6 text-center text-xs text-slate-500 dark:text-slate-400 font-light">
           <p>
-            Created with <span className="text-red-500">❤️</span> by{' '}
+            Made with <span className="text-red-500">♥</span> by{' '}
             <a
               href="https://github.com/cristianrubioa"
               target="_blank"
@@ -553,7 +556,13 @@ function App() {
             >
               @cristianrubioa
             </a>{' '}
-            for developers
+            ·{' '}
+            <a
+              href="https://crubio.fyi"
+              className="hover:text-slate-700 dark:hover:text-slate-200 transition-colors"
+            >
+              crubio.fyi
+            </a>
           </p>
         </div>
       </footer>
