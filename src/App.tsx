@@ -139,7 +139,12 @@ function App() {
       >
         <div className="max-w-6xl mx-auto px-6 h-full">
           <div className="flex items-center justify-between h-full">
-            <h1 className="text-2xl font-light tracking-tight">readmecraft</h1>
+            <h1
+              className="font-semibold tracking-wide leading-none"
+              style={{ fontSize: 'var(--app-name-size, 1.75rem)' }}
+            >
+              readmecraft
+            </h1>
             <div className="flex items-center gap-2">
               <button
                 type="button"
@@ -545,7 +550,7 @@ function App() {
       </main>
 
       <footer className="backdrop-blur-lg bg-slate-50/80 dark:bg-slate-900/80 border-t border-slate-200 dark:border-slate-800">
-        <div className="max-w-6xl mx-auto px-6 py-6 text-center text-xs text-slate-500 dark:text-slate-400 font-light">
+        <div className="max-w-6xl mx-auto px-6 py-6 text-center text-sm text-slate-500 dark:text-slate-400 font-light">
           <p>
             Made with <span className="text-red-500">♥</span> by{' '}
             <a
