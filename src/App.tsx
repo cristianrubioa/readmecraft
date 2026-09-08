@@ -143,7 +143,7 @@ function App() {
               className="font-semibold tracking-wide leading-none"
               style={{ fontSize: 'var(--app-name-size, 1.75rem)' }}
             >
-              readmecraft
+              ReadmeCraft
             </h1>
             <div className="flex items-center gap-2">
               <button
