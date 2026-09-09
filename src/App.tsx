@@ -195,9 +195,9 @@ function App() {
           <div className="max-w-6xl w-full mb-16">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-stretch">
               {/* Left Column */}
-              <div className="lg:col-span-2 space-y-6">
+              <div className="contents lg:block lg:col-span-2 lg:space-y-6">
                 {/* User Card */}
-                <div className="backdrop-blur-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-3xl p-8 text-center shadow-lg shadow-slate-200/50 dark:shadow-slate-900/50">
+                <div className="order-1 lg:order-none backdrop-blur-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-3xl p-8 text-center shadow-lg shadow-slate-200/50 dark:shadow-slate-900/50">
                   <img
                     src={user.avatar_url}
                     alt={user.login}
@@ -221,7 +221,7 @@ function App() {
                 </div>
 
                 {/* Template Selector */}
-                <div className={`${styles.card} p-6`}>
+                <div className={`order-3 lg:order-none ${styles.card} p-6`}>
                   <p className={`${styles.text.base} mb-4`}>Template</p>
                   <div className="grid grid-cols-3 gap-3">
                     {TEMPLATES_ORDER.map((t) => (
@@ -242,7 +242,7 @@ function App() {
                 </div>
 
                 {/* Section Editor */}
-                <div className={`${styles.card} p-6`}>
+                <div className={`order-4 lg:order-none ${styles.card} p-6`}>
                   <p className={`${styles.text.sm} mb-4`}>Sections</p>
                   <SectionEditor
                     sections={sections}
@@ -252,7 +252,7 @@ function App() {
 
                 {/* Featured Projects */}
                 {repos.length > 0 && (
-                  <div className={`${styles.card} p-6`}>
+                  <div className={`order-5 lg:order-none ${styles.card} p-6`}>
                     <div className="flex items-center justify-between mb-4">
                       <p className={styles.text.sm}>Featured Projects</p>
                       <span className="text-xs text-slate-400 dark:text-slate-500 font-mono">
@@ -340,9 +340,9 @@ function App() {
               </div>
 
               {/* Right Column — 3 stacked cards */}
-              <div className="lg:col-span-3 flex flex-col gap-6 h-full">
+              <div className="contents lg:flex lg:flex-col lg:col-span-3 lg:gap-6 lg:h-full">
                 {/* 1. Preview card — flex-1 */}
-                <div className="flex-1 min-h-0 backdrop-blur-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-3xl overflow-hidden flex flex-col shadow-lg shadow-slate-200/50 dark:shadow-slate-900/50">
+                <div className="order-2 lg:order-none flex-1 min-h-0 backdrop-blur-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-3xl overflow-hidden flex flex-col shadow-lg shadow-slate-200/50 dark:shadow-slate-900/50">
                   <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 dark:border-slate-700 shrink-0">
                     <h3 className="text-lg font-light text-slate-900 dark:text-slate-100">
                       Preview
@@ -396,7 +396,7 @@ function App() {
                 </div>
 
                 {/* 2. README.md code card */}
-                <div className="shrink-0 backdrop-blur-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-3xl overflow-hidden shadow-lg shadow-slate-200/50 dark:shadow-slate-900/50">
+                <div className="order-6 lg:order-none shrink-0 backdrop-blur-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-3xl overflow-hidden shadow-lg shadow-slate-200/50 dark:shadow-slate-900/50">
                   <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 dark:border-slate-700">
                     <h3 className="text-sm font-light text-slate-900 dark:text-slate-100">
                       README.md
@@ -409,7 +409,7 @@ function App() {
                 </div>
 
                 {/* 3. How to use card */}
-                <div className="shrink-0 backdrop-blur-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-3xl p-6 shadow-lg shadow-slate-200/50 dark:shadow-slate-900/50">
+                <div className="order-7 lg:order-none shrink-0 backdrop-blur-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-3xl p-6 shadow-lg shadow-slate-200/50 dark:shadow-slate-900/50">
                   <h3 className="text-lg font-light text-slate-900 dark:text-slate-100 mb-4">
                     How to use
                   </h3>
