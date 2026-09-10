@@ -565,6 +565,8 @@ function App() {
             ·{' '}
             <a
               href="https://crubio.fyi"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-slate-700 dark:hover:text-slate-200 transition-colors"
             >
               crubio.fyi
