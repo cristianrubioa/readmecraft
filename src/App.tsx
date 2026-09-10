@@ -552,7 +552,8 @@ function App() {
       <footer className="backdrop-blur-lg bg-slate-50/80 dark:bg-slate-900/80 border-t border-slate-200 dark:border-slate-800">
         <div className="max-w-6xl mx-auto px-6 py-6 text-center text-sm text-slate-500 dark:text-slate-400 font-light">
           <p>
-            Made with <span className="text-red-500">♥</span> by{' '}
+            Made with{' '}
+            <i className="fa-solid fa-heart" style={{ color: '#e55' }}></i> by{' '}
             <a
               href="https://github.com/cristianrubioa"
               target="_blank"
